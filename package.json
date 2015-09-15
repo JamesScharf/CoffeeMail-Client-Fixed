@@ -1,0 +1,11 @@
+{
+    "name": "Coffee Mail",
+    "main": "src/app.html",
+    "window": {
+        "width": 800,
+        "height": 600,
+        "toolbar": true
+    },
+    "dependencies": {
+    }
+}
