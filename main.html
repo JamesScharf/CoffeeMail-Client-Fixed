@@ -2,16 +2,22 @@
   <html>
       <!--Created by James A. Scharf. Last edit 9/13/15-->
     <head>
-        <style> header, main, footer {
-            padding-left: 240px;
-            padding-top: 30px;
-          }
+        <style> 
+            header, main, footer {
+                padding-left: 240px;
+                padding-top: 30px;
+              }
 
           @media only screen and (max-width : 992px) {
             header, main, footer {
               padding-left: 0;
             }
           }
+            
+            .verticalLine {
+    border-left: thin solid #FFFFFF;
+                padding-left: 15px;
+            }
       </style>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
       <!--Let browser know website is optimized for mobile-->
@@ -25,129 +31,75 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
-    <body background="background-dark.jpg">
+    <body background="">
         <nav class="blue-grey darken-4">
-            <div class="nav-wrapper">
-              <form>
+            <div class="nav-wrapper N/A transparent">
+              <form style="margin-left: 235px;">
                 <div class="input-field">
                   <input id="search" type="search" required>
                   <label for="search"><i class="material-icons">search</i></label>
                 </div>
               </form>
             </div>
-            <ul id="slide-out" class="side-nav fixed N/A transparent white-text">
+            <!--Sidebar-->
+            <ul id="slide-out" class="side-nav fixed ">
                 <!--Put the logo here-->
                 <div name="infoArea">
                     <img src="" alt="User" style="margin-top: 90px;margin-bottom: 26px; width:70px;height:70px;display: block; margin-left: auto; margin-right: auto">
-                    <h5 style="text-align: center">Email</h5>
+                    <h5 class="black-text" style="text-align: center">Username</h5>
                     <hr>
                 </div>
-                <li><a href="" class="N/A transparent white-text"><i class="material-icons left " style="margin-top: 18px;">email</i>Inbox</a></li>
-                <li><a href="" class="N/A transparent white-text"><i class="material-icons left" style="margin-top: 18px;">send</i>Sent</a></li>
-                <li><a href="" class="N/A transparent white-text"><i class="material-icons left" style="margin-top: 18px;">delete</i>Trash</a></li>
+                <li><a href="" class=""><i class="material-icons left " style="margin-top: 18px;">email</i>Inbox</a></li>
+                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">send</i>Sent</a></li>
+                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">contacts</i>Contacts</a></li>
                 <hr>
-                <li><a href="" class="N/A transparent white-text"><i class="material-icons left" style="margin-top: 18px;">drafts</i>Drafts</a></li>
+                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">drafts</i>Drafts</a></li>
+                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">description</i>Archived</a></li>
+                <hr>
+                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">delete</i>Trash</a></li>
+                            <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">report</i>Spam</a></li>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </nav>
-        <main>
+        <main style="margin-left: 15px;">
+             <form action="get">
+              <p>
+                  <input type="checkbox" class="filled-in" id="filled-in-box" />
+                  <label for="filled-in-box">Select</label>
+              </p>
+            </form>
+            <hr style="margin-bottom: 20px;">
             <!--Where all of the page content goes-->
             <!--This is the email accordian-->
             <!--You need JS to auto-add and initialize it, see http://materializecss.com/collapsible.html-->
             <ul class="collapsible popout" data-collapsible="accordion" style="">
                 <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                  <div class="collapsible-header N/A transparent white-text">
+                  <div id="colorToggle" class="collapsible-header dismissable ">
                       <i class="material-icons">filter_drama</i>
                       <b>email@email.com:</b>
                       Subject
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
+                      <a href="" class="">
                           <i class="material-icons right">delete</i>
                       </a>
                     </div>
-                    <div class="collapsible-body N/A transparent white-text">
+                    <div id="colorToggle" class="collapsible-body dismissable">
                       <p>Lorem ipsum dolor sit amet.</p>
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
+                      <a href="" style="margin-left: 30px;" class="">
                           <i class="material-icons">forward</i>
                       </a>
-                      <a href="#" style="margin-left: 30px;" class="N/A transparent white-text">
+                      <a href="#" style="margin-left: 30px;" class="">
                           <i class="material-icons">reply</i>
                       </a>
+                    <div id="dropdownDiv" style="">
+                      <!-- Dropdown Trigger -->
+                      <a class='dropdown-button btn NA transparent black-text' style="padding-left: 1000px;" href='#' data-activates='dropdown1'><i class="material-icons">add_circle_outline</i></a>
+
+                      <!-- Dropdown Structure -->
+                      <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="" class=""><i class="material-icons left">description</i>Archive</a></li>
+                        <li><a href="" class=""><i class="material-icons left">report</i>Mark as Spam</a></li>
+                      </ul>
                     </div>
-                </li>
-                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                  <div class="collapsible-header N/A transparent white-text">
-                      <i class="material-icons">filter_drama</i>
-                      <b>email@email.com:</b>
-                      Subject
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons right">delete</i>
-                      </a>
-                    </div>
-                    <div class="collapsible-body N/A transparent white-text">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">forward</i>
-                      </a>
-                      <a href="#" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">reply</i>
-                      </a>
-                    </div>
-                </li>
-                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                  <div class="collapsible-header N/A transparent white-text">
-                      <i class="material-icons">filter_drama</i>
-                      <b>email@email.com:</b>
-                      Subject
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons right">delete</i>
-                      </a>
-                    </div>
-                    <div class="collapsible-body N/A transparent white-text">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">forward</i>
-                      </a>
-                      <a href="#" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">reply</i>
-                      </a>
-                    </div>
-                </li>
-                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                  <div class="collapsible-header N/A transparent white-text">
-                      <i class="material-icons">filter_drama</i>
-                      <b>email@email.com:</b>
-                      Subject
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons right">delete</i>
-                      </a>
-                    </div>
-                    <div class="collapsible-body N/A transparent white-text">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">forward</i>
-                      </a>
-                      <a href="#" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">reply</i>
-                      </a>
-                    </div>
-                </li>
-                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                  <div class="collapsible-header N/A transparent white-text">
-                      <i class="material-icons">filter_drama</i>
-                      <b>email@email.com:</b>
-                      Subject
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons right">delete</i>
-                      </a>
-                    </div>
-                    <div class="collapsible-body N/A transparent white-text">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">forward</i>
-                      </a>
-                      <a href="#" style="margin-left: 30px;" class="N/A transparent white-text">
-                          <i class="material-icons">reply</i>
-                      </a>
                     </div>
                 </li>
             </ul>
@@ -155,11 +107,23 @@
         </main>
         <script>
             $( document ).ready(function(){              
-                // Initialize collapse button
-              $(".button-collapse").sideNav();
-              // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-              //$('.collapsible').collapsible();
-
+                // Initialize collapse button. 
+                $(".button-collapse").sideNav();
+                // Initialize collapsible. Necessary for dynamic creation (uncomment the line below if you use the dropdown variation)
+                //$('.collapsible').collapsible();
+                
+                //You need to do this for dynamic creation of dropdown buttons within the email
+                //Make sure that the creation matches the/an automatic ID for this since they all have to match ID's
+                /*$('.dropdown-button').dropdown({
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: 0, // Spacing from edge
+                    belowOrigin: false, // Displays dropdown below the button
+                    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                }
+              ); */
             });
         </script>
     </body>
