@@ -84,12 +84,50 @@
                     </div>
                     <div id="colorToggle" class="collapsible-body dismissable">
                       <p>Lorem ipsum dolor sit amet.</p>
-                      <a href="" style="margin-left: 30px;" class="">
+                        
+                    <!--Forward modal-->
+                    <div id="forwardmodaldiv" style="display: inline">
+                      <!-- Modal Trigger -->
+                      <a href="#modal2" style="margin-left: 30px;" class="modal-trigger">
                           <i class="material-icons">forward</i>
                       </a>
-                    
+                        <!-- Modal Structure -->
+                      <div id="modal2" class="modal bottom-sheet">
+                        <div class="modal-content">
+                          <h4>Forward to:
+                            <hr>
+                              <br>
+                              <div class="row">
+                                <form class="col s12">
+                                  <div class="row">
+                                    <div class="input-field col s12">
+                                      <input id="email" type="email" class="validate">
+                                      <label for="email" data-error="wrong" data-success="right">Email Address</label>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                          <h6><script>//Put your script here to get who you're responding to</script></h6></h4>
+                          <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                  <label for="textarea1">Email Content</label>
+                                </div>
+                              </div>
+                            </form>
+                            </div>
+        
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
+                        </div>
+                      </div>
+                    </div>
+                        
                     <!--Respond modal-->
-                    <div id="modaldiv" style="display: inline">
+                    <div id="respondmodaldiv" style="display: inline">
                       <!-- Modal Trigger -->
                       <a href="#modal1" style="margin-left: 30px;" class="modal-trigger">
                           <i class="material-icons">reply</i>
@@ -104,11 +142,11 @@
                               <div class="row">
                                 <div class="input-field col s12">
                                   <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                  <label for="textarea1">Email Content</label>
+                                  <label for="textarea1"><script>//Get the email content from the email which was clicked on, and put in the forward</script></label>
                                 </div>
                               </div>
                             </form>
-                          </div>
+                            </div>
         
                         </div>
                         <div class="modal-footer">
@@ -116,6 +154,7 @@
                         </div>
                       </div>
                     </div>
+                        
                     <div id="dropdownDiv" style="">
                       
                         <!-- Dropdown Trigger -->
