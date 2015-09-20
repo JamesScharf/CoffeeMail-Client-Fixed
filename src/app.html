@@ -1,0 +1,64 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="pages/inbox.css">
+        <link rel="stylesheet" href="../lib/materialize/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <script src="../lib/jquery.min.js"></script>
+        <script src="../lib/materialize/js/materialize.min.js"></script>
+        <script src="pages/inbox.js"></script>
+    </head>
+
+    <body background="../res/images/background-dark.jpg">
+        <nav class="blue-grey darken-4">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label for="search"><i class="material-icons">search</i></label>
+                    </div>
+                </form>
+            </div>
+
+            <ul id="slide-out" class="side-nav fixed N/A transparent white-text">
+                <div name="infoArea">
+                    <img src="../res/images/user.jpg" alt="User" style="margin-top: 90px;margin-bottom: 26px; width:70px;height:70px;display: block; margin-left: auto; margin-right: auto; width: 48px; height: 48px; border-radius: 24px;">
+                    <h5 style="text-align: center">Email</h5>
+                    <hr>
+                </div>
+                <li><a href="" class="N/A transparent white-text"><i class="material-icons left " style="margin-top: 18px;">email</i>Inbox</a></li>
+                <li><a href="" class="N/A transparent white-text"><i class="material-icons left" style="margin-top: 18px;">send</i>Sent</a></li>
+                <li><a href="" class="N/A transparent white-text"><i class="material-icons left" style="margin-top: 18px;">delete</i>Trash</a></li>
+                <hr>
+                <li><a href="" class="N/A transparent white-text"><i class="material-icons left" style="margin-top: 18px;">drafts</i>Drafts</a></li>
+            </ul>
+        </nav>
+        <main>
+            <ul class="collapsible popout" data-collapsible="accordion" style="">
+                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
+                  <div class="collapsible-header N/A transparent white-text">
+                      <i class="material-icons">filter_drama</i>
+                      <b>email@email.com:</b>
+                      Subject
+                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
+                          <i class="material-icons right">delete</i>
+                      </a>
+                    </div>
+                    <div class="collapsible-body N/A transparent white-text">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <a href="" style="margin-left: 30px;" class="N/A transparent white-text">
+                          <i class="material-icons">forward</i>
+                      </a>
+                      <a href="#" style="margin-left: 30px;" class="N/A transparent white-text">
+                          <i class="material-icons">reply</i>
+                      </a>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </body>
+  </html>
