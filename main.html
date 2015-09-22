@@ -2,23 +2,16 @@
   <html>
       <!--Created by James A. Scharf. Last edit 9/13/15-->
     <head>
-        <style> 
-            header, main, footer {
-                padding-left: 240px;
-                padding-top: 30px;
-              }
+        <style>
+  header, main, footer {
+    padding-left: 240px;
+  }
 
-          @media only screen and (max-width : 992px) {
-            header, main, footer {
-              padding-left: 0;
-            }
-          }
-            
-            .verticalLine {
-    border-left: thin solid #FFFFFF;
-                padding-left: 15px;
-            }
-      </style>
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+  }</style>
         <link rel="stylesheet" type="text/css" href="mystyle.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -32,149 +25,150 @@
     </head>
 
     <body background="">
-        <nav class="blue-grey darken-4">
-            <div class="nav-wrapper N/A transparent">
-              <form style="margin-left: 235px;">
-                <div class="input-field">
-                  <input id="search" type="search" required>
-                  <label for="search"><i class="material-icons">search</i></label>
+        <header>
+            <nav class="blue-grey darken-4">
+                <div class="nav-wrapper N/A transparent">
+                  <form style="">
+                    <div class="input-field">
+                      <input id="search" type="search" required>
+                      <label for="search"><i class="material-icons">search</i></label>
+                    </div>
+                  </form>
                 </div>
-              </form>
-            </div>
-            <!--Sidebar-->
-            <ul id="slide-out" class="side-nav fixed ">
-                <!--Put the logo here-->
-                <div name="infoArea">
-                    <img src="" alt="User" style="margin-top: 90px;margin-bottom: 26px; width:70px;height:70px;display: block; margin-left: auto; margin-right: auto">
-                    <h5 class="black-text" style="text-align: center">Username</h5>
+                <!--Sidebar-->
+            </nav>
+        </header>
+        <main style="padding-top: 30px; @media only screen and (max-width : 992px) {padding-top: 0;}">
+        <div class="row">
+            <div class= "col s12 m4 l2">
+                <ul id="slide-out" class="side-nav fixed">
+                    <!--Put the logo here-->
+                    <div name="infoArea">
+                        <img src="" alt="User" style="margin-top: 90px;margin-bottom: 26px; width:70px;height:70px;display: block; margin-left: auto; margin-right: auto">
+                        <h5 class="black-text" style="text-align: center">Username</h5>
+                        <hr>
+                    </div>
+                    <li><a href="" class=""><i class="material-icons left " style="margin-top: 18px;">email</i>Inbox</a></li>
+                    <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">send</i>Sent</a></li>
+                    <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">contacts</i>Contacts</a></li>
                     <hr>
-                </div>
-                <li><a href="" class=""><i class="material-icons left " style="margin-top: 18px;">email</i>Inbox</a></li>
-                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">send</i>Sent</a></li>
-                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">contacts</i>Contacts</a></li>
-                <hr>
-                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">drafts</i>Drafts</a></li>
-                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">description</i>Archived</a></li>
-                <hr>
-                <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">delete</i>Trash</a></li>
-                            <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">report</i>Spam</a></li>
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </nav>
-        <main style="margin-left: 15px;">
-             <form action="get">
-              <p>
-                  <input type="checkbox" class="filled-in" id="filled-in-box" />
-                  <label for="filled-in-box">Select</label>
-              </p>
-            </form>
-            <hr style="margin-bottom: 20px;">
-            <!--Where all of the page content goes-->
-            <!--This is the email accordian-->
-            <!--You need JS to auto-add and initialize it, see http://materializecss.com/collapsible.html-->
-            <ul class="collapsible popout" data-collapsible="accordion" style="">
-                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                  <div id="colorToggle" class="collapsible-header dismissable ">
-                      <i class="material-icons">filter_drama</i>
-                      <b>email@email.com:</b>
-                      Subject
-                      <a href="respond.html" target="_blank">
-                          <i class="material-icons right">delete</i>
-                      </a>
-                    </div>
-                    <div id="colorToggle" class="collapsible-body dismissable">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                        
-                    <!--Forward modal-->
-                    <div id="forwardmodaldiv" style="display: inline">
-                      <!-- Modal Trigger -->
-                      <a href="#modal2" style="margin-left: 30px;" class="modal-trigger">
-                          <i class="material-icons">forward</i>
-                      </a>
-                        <!-- Modal Structure -->
-                      <div id="modal2" class="modal bottom-sheet">
-                        <div class="modal-content">
-                          <h4>Forward to:
-                            <hr>
-                              <br>
-                              <div class="row">
-                                <form class="col s12">
-                                  <div class="row">
-                                    <div class="input-field col s12">
-                                      <input id="email" type="email" class="validate">
-                                      <label for="email" data-error="wrong" data-success="right">Email Address</label>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                          <h6><script>//Put your script here to get who you're responding to</script></h6></h4>
-                          <div class="row">
-                            <form class="col s12">
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                  <label for="textarea1">Email Content</label>
-                                </div>
-                              </div>
-                            </form>
-                            </div>
-        
-                        </div>
-                        <div class="modal-footer">
-                          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
-                        </div>
-                      </div>
-                    </div>
-                        
-                    <!--Respond modal-->
-                    <div id="respondmodaldiv" style="display: inline">
-                      <!-- Modal Trigger -->
-                      <a href="#modal1" style="margin-left: 30px;" class="modal-trigger">
-                          <i class="material-icons">reply</i>
-                      </a>
-                        <!-- Modal Structure -->
-                      <div id="modal1" class="modal bottom-sheet">
-                        <div class="modal-content">
-                          <h4>Respond to: <h6><script>//Put your script here to get who you're responding to</script></h6></h4>
-                          <hr>
-                          <div class="row">
-                            <form class="col s12">
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                  <label for="textarea1"><script>//Get the email content from the email which was clicked on, and put in the forward</script></label>
-                                </div>
-                              </div>
-                            </form>
-                            </div>
-        
-                        </div>
-                        <div class="modal-footer">
-                          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
-                        </div>
-                      </div>
-                    </div>
-                        
-                    <div id="dropdownDiv" style="">
-                      
-                        <!-- Dropdown Trigger -->
-                      <a class='dropdown-button btn NA transparent black-text' style="padding-left: 1000px;" href='#' data-activates='dropdown1'><i class="material-icons">add_circle_outline</i></a>
+                    <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">drafts</i>Drafts</a></li>
+                    <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">description</i>Archived</a></li>
+                    <hr>
+                    <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">delete</i>Trash</a></li>
+                    <li><a href="" class=""><i class="material-icons left" style="margin-top: 18px;">report</i>Spam</a></li>
+                </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse hide"><i class="mdi-navigation-menu"></i></a>
 
-                      <!-- Dropdown Structure -->
-                      <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="" class=""><i class="material-icons left">description</i>Archive</a></li>
-                        <li><a href="" class=""><i class="material-icons left">report</i>Mark as Spam</a></li>
+            </div>
+            <div class="col s12 m8 l10" style="">
+                <!--These are the tabs-->
+                <div id="tabsDiv" class="row">
+                    <div class="col s12">
+                      <ul id="tabs" class="tabs">
+                        <li class="tab col s3"><a class="active" href="#test1">Inbox</a></li>
+                        <li class="tab col s3"><a href="#test2">Test 2</a></li>
                       </ul>
                     </div>
-                    </div>
-                </li>
-            </ul>
-            
-        </main>
+                    <div id="tabsCollectionDiv" >
+                        <div id="test1" class="col s12">
+                            <form action="post">
+                            <p>
+                                <input type="checkbox" class="filled-in" id="filled-in-box" />
+                                <label for="filled-in-box">Select</label>
+                            </p>
+                            </form>
+                            <hr style="margin-bottom: 20px;">
+                            <!--Where all of the page content goes-->
+                            <!--This is the email accordian-->
+                            <!--You need JS to auto-add and initialize it, see http://materializecss.com/collapsible.html-->
+                            <ul class="collapsible popout" data-collapsible="accordion" style="">
+                                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
+                                  <div id="colorToggle" class="collapsible-header dismissable ">
+                                      <i class="material-icons">filter_drama</i>
+                                      <b>email@email.com:</b>
+                                      Subject
+                                      <a href="" class="right-align">
+                                          <i class="material-icons" style="@media only screen and (max-width : 992px) {padding-left: 0;}">delete</i>
+                                      </a>
+                                    </div>
+                                    <div id="colorToggle" class="collapsible-body dismissable">
+                                        <p>Lorem ipsum dolor sit amet.</p>
+
+                                        </br></br>
+                                        <div class="row">
+                                            <!--This is the forwarding button which creates a new forward tab-->
+                                            <div id="forwarddiv" style="display: inline-block">
+                                                <a style="margin-left: 30px;" onclick="forwardFunction()" class="waves-light btn N/A transparent black-text z-depth-0">
+                                                    <i class="material-icons">forward</i>
+                                                </a>
+                                                <script>
+                                                    function forwardFunction()
+                                                    {
+                                                        var forwardWord = "Forward";
+                                                        var forwardContent = "This is where you'll place all of the forwarding html"; //MUST PUT HTML FOR FORWARDING IN HERE
+                                                        var randTabName = Math.floor((Math.random() * 1000) + 1);
+                                                        var $tabs = $('#tabs');      
+                                                        $tabs.append("<li class='tab col s3'><a href='#"+randTabName+"'>"+forwardWord+"</a></li>");
+                                                        $("#tabsCollectionDiv").append("<div id='"+randTabName+"' class='col s12'>"+forwardContent+"</div>");
+                                                        // initalize tabs again, then select new tab
+                                                        $tabs.tabs().tabs('select_tab', randTabName);
+                                                    }                                                                    
+                                                </script>
+                                            </div>
+                                            <!--This is the forwarding button which creates a new forward tab-->
+                                            <div id="replydiv" style="display: inline-block">
+                                                <a style="margin-left: 30px;" onclick="replyFunction()" class="waves-light btn N/A transparent black-text z-depth-0">
+                                                    <i class="material-icons">reply</i>
+                                                </a>
+                                                <script>
+                                                    function replyFunction()
+                                                    {
+                                                        var replyWord = "Forward";
+                                                        var replyContent = "This is where you'll place all of the forwarding html"; //MUST PUT HTML FOR FORWARDING IN HERE
+                                                        var randTabName = Math.floor((Math.random() * 1000) + 1);
+                                                        var $tabs = $('#tabs');      
+                                                        $tabs.append("<li class='tab col s3'><a href='#"+randTabName+"'>"+replyWord+"</a></li>");
+                                                        $("#tabsCollectionDiv").append("<div id='"+randTabName+"' class='col s12'>"+replyContent+"</div>");
+                                                        // initalize tabs again, then select new tab
+                                                        $tabs.tabs().tabs('select_tab', randTabName);
+                                                    }                                                                    
+                                                </script>
+                                            </div>
+                                            <div id="dropdownDiv">
+
+                                                <!-- Dropdown Trigger -->
+                                              <a class='dropdown-button btn NA transparent black-text z-depth-0' style="margin-left: 900px; display: inline-block;" href='#' data-activates='dropdown1'><i class="material-icons">add_circle_outline</i></a>
+
+                                              <!-- Dropdown Structure -->
+                                              <ul id='dropdown1' style="display: inline-block;" class='dropdown-content'>
+                                                <li><a href="" class=""><i class="material-icons left">description</i>Archive</a></li>
+                                                <li><a href="" class=""><i class="material-icons left">report</i>Mark as Spam</a></li>
+                                              </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="test2" class="col s12">
+                            Test 2
+                        </div>
+                </div>
+
+            </div>
+          </div>
+      </div>
+    </main>
         <script>
-            $( document ).ready(function(){              
+            $( document ).ready(function(){ 
+                //Initialize the tabs
+                $(document).ready(function(){
+                $('ul.tabs').tabs();
+      
                 // Initialize collapse button. 
                 $(".button-collapse").sideNav();
+                $('.collapsible').collapsible();
                 // Initialize collapsible. Necessary for dynamic creation (uncomment the line below if you use the dropdown variation)
                 //$('.collapsible').collapsible();
                 
