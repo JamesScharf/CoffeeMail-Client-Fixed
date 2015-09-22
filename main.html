@@ -12,16 +12,22 @@
               padding-left: 0;
             }
           }
+          
+          @media only screen and (max-width : 992px) {
+                header, main, footer {
+                    padding-left: 0;
+                }
+            }
         
         .email_container {
             position:relative;
         }
-        .droppable_right {
+        .absolute_right {
             position:absolute;
             bottom:0;
             right:0;
         }
-        .droppable_left {
+        .absolute_left {
             position:absolute;
             bottom:0;
             left:0;
@@ -45,9 +51,9 @@
                   <form style="">
                     <div class="input-field">
                       <input id="search" type="search" required>
-                      <label for="search">
+                      <
                           <i  class="material-icons">search</i>
-                      </label>
+                      
                     </div>
                   </form>
                 </div>
@@ -103,17 +109,17 @@
                                       <b>email@email.com:</b>
                                       Subject
                                       <a href="" class="right-align">
-                                          <i class="material-icons" style="@media only screen and (max-width : 992px) {padding-left: 0;}">delete</i>
+                                          <i class="material-icons ">delete</i>
                                       </a>
                                     </div>
                                     <div id="colorToggle" class="collapsible-body dismissable valign-wrapper ">
                                         <p>Lorem ipsum dolor sit amet.</p>
 
                                         </br></br>
-                                        <div class="row email_container">
+                                        <div class="email_container">
                                             <!--This is the forwarding button which creates a new forward tab-->
-                                            <div id="forwarddiv" class="email_container" style="display: inline-block">
-                                                <a style="margin-left: 30px;" onclick="forwardFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
+                                            <div id="forwarddiv" class="absolute_left" style="">
+                                                <a style="" onclick="forwardFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
                                                     <i class="material-icons">forward</i>
                                                 </a>
                                                 <script>
@@ -131,7 +137,7 @@
                                                 </script>
                                             </div>
                                             <!--This is the forwarding button which creates a new forward tab-->
-                                            <div id="replydiv" class="email_container" style="display: inline-block">
+                                            <div id="replydiv" class="absolute_left" style="margin-left: 80px;">
                                                 <a style="margin-left: 0px;" onclick="replyFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
                                                     <i class="material-icons">reply</i>
                                                 </a>
@@ -149,12 +155,12 @@
                                                     }                                                                    
                                                 </script>
                                             </div>
-                                            <div id="dropdownDiv" class="droppable_right">
+                                            <div id="dropdownDiv" style="" class="absolute_right">
                                                 <!-- Dropdown Trigger -->
-                                              <a class='dropdown-button btn NA transparent black-text z-depth-0' style="margin-left: 900px; display: inline-block;" href='#' data-activates='dropdown1'><i class="material-icons">add_circle_outline</i></a>
+                                              <a class='dropdown-button btn NA transparent black-text z-depth-0' style="" href='#' data-activates='dropdown1'><i class="material-icons">add_circle_outline</i></a>
 
                                               <!-- Dropdown Structure -->
-                                              <ul id='dropdown1' style="margin-left: 850px; margin-top: 40px;" class='dropdown-content z-depth-1'>
+                                              <ul id='dropdown1' style="margin-top: 40px;" class='dropdown-content z-depth-1'>
                                                 <li><a href="" class=""><i class="material-icons left">description</i>Archive</a></li>
                                                 <li><a href="" class=""><i class="material-icons left">report</i>Mark as Spam</a></li>
                                               </ul>
