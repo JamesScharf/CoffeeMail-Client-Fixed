@@ -3,16 +3,30 @@
       <!--Created by James A. Scharf. Last edit 9/13/15-->
     <head>
         <style>
-  header, main, footer {
-    padding-left: 240px;
-  }
+          header, main, footer {
+            padding-left: 240px;
+          }
 
-  @media only screen and (max-width : 992px) {
-    header, main, footer {
-      padding-left: 0;
-    }
-  }</style>
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+          @media only screen and (max-width : 992px) {
+            header, main, footer {
+              padding-left: 0;
+            }
+          }
+        
+        .email_container {
+            position:relative;
+        }
+        .droppable_right {
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+        .droppable_left {
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+        </style>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Compiled and minified CSS -->
@@ -31,11 +45,12 @@
                   <form style="">
                     <div class="input-field">
                       <input id="search" type="search" required>
-                      <label for="search"><i class="material-icons">search</i></label>
+                      <label for="search">
+                          <i  class="material-icons">search</i>
+                      </label>
                     </div>
                   </form>
                 </div>
-                <!--Sidebar-->
             </nav>
         </header>
         <main style="padding-top: 30px; @media only screen and (max-width : 992px) {padding-top: 0;}">
@@ -61,13 +76,12 @@
   <a href="#" data-activates="slide-out" class="button-collapse hide"><i class="mdi-navigation-menu"></i></a>
 
             </div>
-            <div class="col s12 m8 l10" style="">
+            <div class="col s12 m8 l10">
                 <!--These are the tabs-->
                 <div id="tabsDiv" class="row">
                     <div class="col s12">
                       <ul id="tabs" class="tabs">
                         <li class="tab col s3"><a class="active" href="#test1">Inbox</a></li>
-                        <li class="tab col s3"><a href="#test2">Test 2</a></li>
                       </ul>
                     </div>
                     <div id="tabsCollectionDiv" >
@@ -83,7 +97,7 @@
                             <!--This is the email accordian-->
                             <!--You need JS to auto-add and initialize it, see http://materializecss.com/collapsible.html-->
                             <ul class="collapsible popout" data-collapsible="accordion" style="">
-                                <li style="outline-color: #00ff00;outline: solid white; margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
+                                <li style="margin-bottom: 20px;"> <!--One email unit, consisting of the icon+subject and then the actual email-->
                                   <div id="colorToggle" class="collapsible-header dismissable ">
                                       <i class="material-icons">filter_drama</i>
                                       <b>email@email.com:</b>
@@ -92,14 +106,14 @@
                                           <i class="material-icons" style="@media only screen and (max-width : 992px) {padding-left: 0;}">delete</i>
                                       </a>
                                     </div>
-                                    <div id="colorToggle" class="collapsible-body dismissable">
+                                    <div id="colorToggle" class="collapsible-body dismissable valign-wrapper ">
                                         <p>Lorem ipsum dolor sit amet.</p>
 
                                         </br></br>
-                                        <div class="row">
+                                        <div class="row email_container">
                                             <!--This is the forwarding button which creates a new forward tab-->
-                                            <div id="forwarddiv" style="display: inline-block">
-                                                <a style="margin-left: 30px;" onclick="forwardFunction()" class="waves-light btn N/A transparent black-text z-depth-0">
+                                            <div id="forwarddiv" class="email_container" style="display: inline-block">
+                                                <a style="margin-left: 30px;" onclick="forwardFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
                                                     <i class="material-icons">forward</i>
                                                 </a>
                                                 <script>
@@ -117,8 +131,8 @@
                                                 </script>
                                             </div>
                                             <!--This is the forwarding button which creates a new forward tab-->
-                                            <div id="replydiv" style="display: inline-block">
-                                                <a style="margin-left: 30px;" onclick="replyFunction()" class="waves-light btn N/A transparent black-text z-depth-0">
+                                            <div id="replydiv" class="email_container" style="display: inline-block">
+                                                <a style="margin-left: 0px;" onclick="replyFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
                                                     <i class="material-icons">reply</i>
                                                 </a>
                                                 <script>
@@ -135,13 +149,12 @@
                                                     }                                                                    
                                                 </script>
                                             </div>
-                                            <div id="dropdownDiv">
-
+                                            <div id="dropdownDiv" class="droppable_right">
                                                 <!-- Dropdown Trigger -->
                                               <a class='dropdown-button btn NA transparent black-text z-depth-0' style="margin-left: 900px; display: inline-block;" href='#' data-activates='dropdown1'><i class="material-icons">add_circle_outline</i></a>
 
                                               <!-- Dropdown Structure -->
-                                              <ul id='dropdown1' style="display: inline-block;" class='dropdown-content'>
+                                              <ul id='dropdown1' style="margin-left: 850px; margin-top: 40px;" class='dropdown-content z-depth-1'>
                                                 <li><a href="" class=""><i class="material-icons left">description</i>Archive</a></li>
                                                 <li><a href="" class=""><i class="material-icons left">report</i>Mark as Spam</a></li>
                                               </ul>
@@ -151,9 +164,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="test2" class="col s12">
-                            Test 2
-                        </div>
                 </div>
 
             </div>
@@ -161,9 +171,8 @@
       </div>
     </main>
         <script>
-            $( document ).ready(function(){ 
+            $(document).ready(function(){ 
                 //Initialize the tabs
-                $(document).ready(function(){
                 $('ul.tabs').tabs();
       
                 // Initialize collapse button. 
