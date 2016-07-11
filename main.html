@@ -12,11 +12,11 @@
               padding-left: 0;
             }
           }
-        
+
         .email_container {
             position:relative;
         }
-        
+
         .absolute_right {
             position:absolute;
             bottom:0;
@@ -27,19 +27,21 @@
             bottom:0;
             left:0;
         }
-        
-            
-            
         </style>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-        
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+
+      <!--Icons-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!--Essential UI functions-->
+      <script src="uiAPI.js"></script>
     </head>
 
     <body background="">
@@ -48,7 +50,7 @@
                 <i id="menuIcon" class="medium material-icons hide-on-med-and-up" onclick="openMenu()">view_headline</i>
                 <script>
                     var openOrClosed = false;
-                    function openMenu() 
+                    function openMenu()
                     {
                         if(openOrClosed == false) //If not open, open menu
                         {
@@ -119,7 +121,7 @@
                                 <label for="filled-in-box">Select</label>
                                 <script>
                                     var selected = false;
-                                    function selectAllEmails() 
+                                    function selectAllEmails()
                                     {
                                         if(selected == false)
                                         {
@@ -136,7 +138,7 @@
                             <!--You need JS to auto-add and initialize it, see http://materializecss.com/collapsible.html-->
                             <ul class="collapsible popout" data-collapsible="accordion" style="">
                                 <li style="margin-bottom: 20px;" class="dismissable"> <!--One email unit, consisting of the icon+subject and then the actual email-->
-                                    <div id="colorToggle" class="collapsible-header"> 
+                                    <div id="colorToggle" class="collapsible-header">
                                         <b>email@email.com:</b>
                                         Subject
                                         <a href="" class="right-align">
@@ -153,38 +155,12 @@
                                                 <a style="" onclick="forwardFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
                                                     <i class="material-icons">forward</i>
                                                 </a>
-                                                <script>
-                                                    function forwardFunction()
-                                                    {
-                                                        var forwardWord = "Forward";
-                                                        var forwardContent = "This is where you'll place all of the forwarding html"; //MUST PUT HTML FOR FORWARDING IN HERE
-                                                        var randTabName = Math.floor((Math.random() * 1000) + 1);
-                                                        var $tabs = $('#tabs');      
-                                                        $tabs.append("<li class='tab col s3'><a href='#"+randTabName+"'>"+forwardWord+"</a></li>");
-                                                        $("#tabsCollectionDiv").append("<div id='"+randTabName+"' class='col s12'>"+forwardContent+"</div>");
-                                                        // initalize tabs again, then select new tab
-                                                        $tabs.tabs().tabs('select_tab', randTabName);
-                                                    }                                                                    
-                                                </script>
                                             </div>
                                             <!--This is the forwarding button which creates a new forward tab-->
                                             <div id="replydiv" class="absolute_left" style="margin-left: 80px;">
                                                 <a style="margin-left: 0px;" onclick="replyFunction()" class="waves-light btn N/A transparent black-text z-depth-0 ">
                                                     <i class="material-icons">reply</i>
                                                 </a>
-                                                <script>
-                                                    function replyFunction()
-                                                    {
-                                                        var replyWord = "Forward";
-                                                        var replyContent = "This is where you'll place all of the forwarding html"; //MUST PUT HTML FOR FORWARDING IN HERE
-                                                        var randTabName = Math.floor((Math.random() * 1000) + 1);
-                                                        var $tabs = $('#tabs');      
-                                                        tabs.append("<li class='tab col s3'><a href='#"+randTabName+"'>"+replyWord+"</a></li>");
-                                                        $("#tabsCollectionDiv").append("<div id='"+randTabName+"' class='col s12'>"+replyContent+"</div>");
-                                                        // initalize tabs again, then select new tab
-                                                        $tabs.tabs().tabs('select_tab', randTabName);
-                                                    }                                                                    
-                                                </script>
                                             </div>
                                             <div id="dropdownDiv" style="" class="absolute_right">
                                                 <!-- Dropdown Trigger -->
@@ -199,7 +175,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                
+
                             </ul>
                         </div>
                 </div>
@@ -207,18 +183,28 @@
             </div>
           </div>
       </div>
+
+      <div class="fixed-action-btn hoverable z-depth-0" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating red"><i class="material-icons">forward</i></a></li>
+          <li><a class="btn-floating green"><i class="material-icons">reply</i></a></li>
+          <li><a class="btn-floating blue"><i class="material-icons">send</i></a></li>
+        </ul>
+      </div>
     </main>
         <script>
-            $(document).ready(function(){ 
+            $(document).ready(function(){
                 //Initialize the tabs
                 $('ul.tabs').tabs();
-      
-                // Initialize collapse button. 
+                // Initialize collapse button.
                 $(".button-collapse").sideNav();
                 $('.collapsible').collapsible();
                 // Initialize collapsible. Necessary for dynamic creation (uncomment the line below if you use the dropdown variation)
                 //$('.collapsible').collapsible();
-                
+
                 //You need to do this for dynamic creation of dropdown buttons within the email
                 //Make sure that the creation matches the/an automatic ID for this since they all have to match ID's
                 /*$('.dropdown-button').dropdown({
